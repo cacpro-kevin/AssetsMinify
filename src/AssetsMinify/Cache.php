@@ -31,14 +31,14 @@ class Cache {
 
 		//Creates the uploads dir
 		if ( !is_dir($this->path) ) {
-			mkdir($this->path, 0777);
+			mkdir($this->path, 0755);
 		}
 
 		$this->path .=  '/' . self::$directory . '/';
 
 		//Creates the AM cache dir
 		if ( !is_dir($this->path) ) {
-			mkdir($this->path, 0777);
+			mkdir($this->path, 0755);
 		} else {
 			//Calls the Garbage Collector that outdated cached files.
 			$this->gc = new Cache\GarbageCollector( $this );
